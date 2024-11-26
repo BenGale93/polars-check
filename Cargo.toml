@@ -23,7 +23,7 @@ path = "src/check/lib.rs"
 [dependencies]
 clap = { version = "4.3.0", features = ["derive"] }
 colored = "2.0.0"
-confy = "0.5.1"
+confy = "0.6.1"
 enum_dispatch = "0.3.13"
 log = "0.4.19"
 polars = { version = "0.44.2", features = [
