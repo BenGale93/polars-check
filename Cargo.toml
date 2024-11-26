@@ -1,0 +1,43 @@
+[package]
+authors = ["Ben Askew-Gale <bengale2007@googlemail.com>"]
+name = "polars-check"
+categories = ["command-line-utilities"]
+description = ""
+keywords = []
+readme = "./README.md"
+repository = ""
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "check"
+path = "src/bin/check/main.rs"
+
+[lib]
+name = "check"
+path = "src/check/lib.rs"
+
+[dependencies]
+clap = { version = "4.3.0", features = ["derive"] }
+colored = "2.0.0"
+confy = "0.5.1"
+enum_dispatch = "0.3.13"
+log = "0.4.19"
+polars = { version = "0.44.2", features = [
+    "lazy",
+    "parquet",
+    "dtype-struct",
+    "is_unique",
+] }
+pretty_env_logger = "0.5.0"
+serde = { version = "1.0.163", features = ["serde_derive"] }
+serde_json = "1.0.133"
+thiserror = "1.0.40"
+toml = "0.8.19"
+uuid = { version = "1.11.0", features = ["v4", "fast-rng"] }
+
+[dev-dependencies]
+rstest = "0.17.0"

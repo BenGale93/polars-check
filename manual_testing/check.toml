@@ -1,0 +1,26 @@
+[metadata]
+name = "test"
+path = "manual_testing/yellow_tripdata_2023-01.parquet"
+result_path = "manual_testing/"
+
+[[checks]]
+name = "IsNotNull"
+column = "passenger_count"
+
+[[checks]]
+name = "IsNotNull"
+column = "VendorID"
+
+[[checks]]
+name = "IsUnique"
+column = "VendorID"
+
+[[checks]]
+name = "IsBetween"
+column = "trip_distance"
+max = 1000.0
+
+[[checks]]
+name = "IsBetween"
+column = "payment_type"
+min = 0
