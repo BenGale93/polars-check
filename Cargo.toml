@@ -21,23 +21,23 @@ name = "check"
 path = "src/check/lib.rs"
 
 [dependencies]
-clap = { version = "4.3.0", features = ["derive"] }
-colored = "2.0.0"
-confy = "0.5.1"
+clap = { version = "4.5.21", features = ["derive"] }
+colored = "2.1.0"
+confy = "0.6.1"
 enum_dispatch = "0.3.13"
-log = "0.4.19"
+log = "0.4.22"
 polars = { version = "0.44.2", features = [
-    "lazy",
-    "parquet",
-    "dtype-struct",
-    "is_unique",
+  "lazy",
+  "parquet",
+  "dtype-struct",
+  "is_unique",
 ] }
 pretty_env_logger = "0.5.0"
-serde = { version = "1.0.163", features = ["serde_derive"] }
+serde = { version = "1.0.215", features = ["serde_derive"] }
 serde_json = "1.0.133"
-thiserror = "1.0.40"
+thiserror = "2.0.3"
 toml = "0.8.19"
 uuid = { version = "1.11.0", features = ["v4", "fast-rng"] }
 
 [dev-dependencies]
-rstest = "0.17.0"
+rstest = "0.23.0"
