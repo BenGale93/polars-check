@@ -5,7 +5,7 @@ use std::{
 
 use serde::{Deserialize, Serialize};
 
-use crate::prelude::*;
+use crate::{io::ScanArgsParquetCheck, prelude::*};
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct CheckSuiteMetadata {
@@ -13,6 +13,8 @@ pub struct CheckSuiteMetadata {
     name: String,
     /// Dataset to use for this suite.
     path: PathBuf,
+    /// Parquet loading options.
+    parquet_args: Option<ScanArgsParquetCheck>,
     /// Path to place to result JSON
     result_path: PathBuf,
 }
@@ -28,6 +30,10 @@ impl CheckSuiteMetadata {
 
     pub fn result_path(&self) -> PathBuf {
         self.result_path.join(format!("{}_results.json", self.name))
+    }
+
+    pub fn parquet_args(&self) -> ScanArgsParquetCheck {
+        self.parquet_args.clone().unwrap_or_default()
     }
 }
 

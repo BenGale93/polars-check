@@ -13,7 +13,7 @@ impl RunArgs {
     pub fn run(self) -> Result<()> {
         let config = config::CheckSuiteConfig::from_toml(&self.config)?;
 
-        let lf = io::scan_parquet(config.metadata().path())?;
+        let lf = io::scan_parquet(config.metadata().path(), config.metadata().parquet_args())?;
 
         let full_results = check::run_computed_checks(&lf, config.checks())?;
         let result_suite = results::CheckResultSuite::new(full_results);

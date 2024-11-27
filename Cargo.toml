@@ -31,6 +31,8 @@ polars = { version = "0.44.2", features = [
   "parquet",
   "dtype-struct",
   "is_unique",
+  "serde",
+  "serde-lazy",
 ] }
 pretty_env_logger = "0.5.0"
 serde = { version = "1.0.215", features = ["serde_derive"] }

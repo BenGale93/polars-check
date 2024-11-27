@@ -3,6 +3,9 @@ name = "test"
 path = "manual_testing/yellow_tripdata_2023-01.parquet"
 result_path = "manual_testing/"
 
+[metadata.parquet_args]
+low_memory = true
+
 [[checks]]
 name = "IsNotNull"
 column = "passenger_count"
