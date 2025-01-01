@@ -36,7 +36,7 @@ polars = { version = "0.44.2", features = [
 ] }
 pretty_env_logger = "0.5.0"
 serde = { version = "1.0.215", features = ["serde_derive"] }
-serde_json = "1.0.133"
+serde_json = "1.0.134"
 thiserror = "2.0.3"
 toml = "0.8.19"
 uuid = { version = "1.11.0", features = ["v4", "fast-rng"] }
